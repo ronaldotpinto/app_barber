@@ -41,7 +41,7 @@ public class CadastroServico extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         reference = database.getReference();
 
-        reference.child("servicos").push().setValue( servico );
+        reference.child("servico").push().setValue( servico );
 
 
 
