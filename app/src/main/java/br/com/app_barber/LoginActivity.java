@@ -85,11 +85,17 @@ public class LoginActivity extends AppCompatActivity {
                                         Toast.makeText(LoginActivity.this,
                                                 "Login ok!",
                                                 Toast.LENGTH_LONG).show();
-
+                                        EntrarCadastroServico();
                                     }
                                 }
                             });
         }
+    }
+
+    private void EntrarCadastroServico(){
+        Intent intentCadastroServico = new Intent(
+                LoginActivity.this, CadastroServico.class);
+        startActivity(intentCadastroServico);
     }
 }
 
