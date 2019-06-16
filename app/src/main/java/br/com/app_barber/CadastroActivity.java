@@ -64,6 +64,9 @@ public class CadastroActivity extends AppCompatActivity {
                                 reference.child("nome").setValue(nome);
                                 reference.child("email").setValue(email);
                                 finish();
+                                Toast.makeText(CadastroActivity.this,
+                                        "Usuário criado",
+                                        Toast.LENGTH_SHORT).show();
                             }else {
                                 Toast.makeText(CadastroActivity.this,
                                         "Erro ao criar o usuário",
