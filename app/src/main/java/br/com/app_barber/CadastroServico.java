@@ -1,10 +1,12 @@
 package br.com.app_barber;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -12,7 +14,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class CadastroServico extends AppCompatActivity {
 
     private EditText etServico, etValor;
-    private Button btnSalvar;
+    private Button btnSalvar, btnVisualizarLista;
 
     private FirebaseDatabase database;
     private DatabaseReference reference;
@@ -23,12 +25,20 @@ public class CadastroServico extends AppCompatActivity {
 
         etServico = (EditText) findViewById(R.id.etServico);
         etValor = (EditText) findViewById(R.id.etValor);
-        btnSalvar = (Button) findViewById(R.id.btnSalvar);
+        btnSalvar = (Button) findViewById(R.id.btnSalvarServico);
+        btnVisualizarLista = (Button) findViewById(R.id.btnVisualizarLista);
 
         btnSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 salvar();
+            }
+        });
+
+        btnVisualizarLista.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ListaServicos();
             }
         });
     }
@@ -40,12 +50,18 @@ public class CadastroServico extends AppCompatActivity {
 
         database = FirebaseDatabase.getInstance();
         reference = database.getReference();
+        reference.child("Servicos").push().setValue( servico );
 
-        reference.child("servico").push().setValue( servico );
-
-
-
-
+        Toast.makeText(CadastroServico.this,
+                "Cadastro efetuado!",
+                Toast.LENGTH_LONG).show();
         this.finish();
+    }
+
+    private void ListaServicos(){
+        Intent intentListaServico = new Intent(
+                CadastroServico.this, ListaActivity.class);
+        startActivity(intentListaServico);
+
     }
 }
