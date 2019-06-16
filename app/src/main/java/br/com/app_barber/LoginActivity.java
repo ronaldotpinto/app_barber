@@ -80,6 +80,13 @@ public class LoginActivity extends AppCompatActivity {
                                                 "Erro ao efetuar o login",
                                                 Toast.LENGTH_LONG).show();
                                     }
+                                    else
+                                    {
+                                        Toast.makeText(LoginActivity.this,
+                                                "Login ok!",
+                                                Toast.LENGTH_LONG).show();
+
+                                    }
                                 }
                             });
         }

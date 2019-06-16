@@ -48,7 +48,7 @@ public class ListaActivity extends AppCompatActivity {
 
         database = FirebaseDatabase.getInstance();
         reference = database.getReference();
-        query = reference.child("notas").orderByChild("titulo");
+        query = reference.child("servico").orderByChild("servico");
 
         childEventListener = new ChildEventListener() {
             @Override
@@ -102,7 +102,7 @@ public class ListaActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        lvLista = (ListView) findViewById(R.id.lvAnotacoes);
+        lvLista = (ListView) findViewById(R.id.lvServico);
 
         lista = new ArrayList<>();
 
