@@ -18,7 +18,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class CadastroActivity extends AppCompatActivity {
 
-    private EditText etNome, etEmail, etSenha;
+    private EditText etCadastroNome, etCadastroEmail, etCadastroSenha;
     private Button btnCadastrar;
 
     private FirebaseAuth auth;
@@ -31,9 +31,9 @@ public class CadastroActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
-        etNome = (EditText) findViewById(R.id.etNome);
-        etEmail = (EditText) findViewById(R.id.etEmail);
-        etSenha = (EditText) findViewById(R.id.etCadastroSenha);
+        etCadastroNome = (EditText) findViewById(R.id.etCadastroNome);
+        etCadastroEmail = (EditText) findViewById(R.id.etCadastroEmail);
+        etCadastroSenha = (EditText) findViewById(R.id.etCadastroSenha);
         btnCadastrar = (Button) findViewById(R.id.btnCadastro);
 
         btnCadastrar.setOnClickListener(new View.OnClickListener() {
@@ -46,9 +46,9 @@ public class CadastroActivity extends AppCompatActivity {
     }
 
     private void cadastrar(){
-        final String nome = etNome.getText().toString();
-        final String email = etEmail.getText().toString();
-        String senha = etSenha.getText().toString();
+        final String nome = etCadastroNome.getText().toString();
+        final String email = etCadastroEmail.getText().toString();
+        String senha = etCadastroSenha.getText().toString();
 
         if( !nome.isEmpty() && !email.isEmpty() && !senha.isEmpty()){
 
