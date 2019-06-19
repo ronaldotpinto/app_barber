@@ -48,7 +48,7 @@ public class ListaActivity extends AppCompatActivity {
 
         database = FirebaseDatabase.getInstance();
         reference = database.getReference();
-        query = reference.child("servico").orderByChild("servico");
+        query = reference.child("Servicos").orderByChild("servico");
 
         childEventListener = new ChildEventListener() {
             @Override
@@ -125,8 +125,8 @@ public class ListaActivity extends AppCompatActivity {
                 final Servico servicoSelecionada = lista.get(position);
                 AlertDialog.Builder alerta =
                         new AlertDialog.Builder(ListaActivity.this);
-                alerta.setTitle("Excluir Anotação...");
-                alerta.setMessage("Confirma a exclusão da anotação " +
+                alerta.setTitle("Excluir Serviço...");
+                alerta.setMessage("Confirma a exclusão do serviço " +
                         servicoSelecionada.getServico() + "?");
                 alerta.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
                     @Override
@@ -150,7 +150,6 @@ public class ListaActivity extends AppCompatActivity {
     }
 
     private void carregarLista(){
-//        lista = AnotacaoDAO.listar(this);
         adapter = new AdapterServico(this, lista);
         lvLista.setAdapter(adapter);
     }
