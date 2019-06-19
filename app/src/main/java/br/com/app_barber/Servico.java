@@ -24,15 +24,13 @@ public class Servico {
         return servico;
     }
 
-    public void setServico(String servico) {
-        this.valor = servico;
-    }
+    public void setServico(String servico) {this.servico = servico; }
 
     public String getValor() {
         return valor;
     }
 
-    public void setValor(String texto) {
+    public void setValor(String valor) {
         this.valor = valor;
     }
 }
