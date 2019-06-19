@@ -56,10 +56,10 @@ public class AdapterServico extends BaseAdapter {
             item = (Suporte) convertView.getTag();
         }
 
-        Servico nota = lista.get( position );
-        item.tvCodigo.setText(  nota.getId()  );
-        item.tvServico.setText(  nota.getServico()  );
-        item.tvValor.setText(  nota.getValor()  );
+        Servico servico = lista.get( position );
+        item.tvCodigo.setText(  servico.getId());
+        item.tvServico.setText(  servico.getServico() );
+        item.tvValor.setText(  servico.getValor()  );
 
 
 
@@ -71,7 +71,6 @@ public class AdapterServico extends BaseAdapter {
     }
 
 }
-
 
 
 
