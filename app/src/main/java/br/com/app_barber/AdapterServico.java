@@ -44,11 +44,11 @@ public class AdapterServico extends BaseAdapter {
             convertView = inflater.inflate
                     (R.layout.layout_lista_servicos, null);
             item = new Suporte();
-            item.tvCodigo = (TextView)
+            item.tvListaCodigo = (TextView)
                     convertView.findViewById(R.id.tvListaCodigo);
-            item.tvServico = (TextView)
+            item.tvListaServico = (TextView)
                     convertView.findViewById(R.id.tvListaServico);
-            item.tvValor = (TextView)
+            item.tvListaValor = (TextView)
                     convertView.findViewById(R.id.tvListaValor);
 
             convertView.setTag(item);
@@ -56,10 +56,10 @@ public class AdapterServico extends BaseAdapter {
             item = (Suporte) convertView.getTag();
         }
 
-        Servico nota = lista.get( position );
-        item.tvCodigo.setText(  nota.getId()  );
-        item.tvServico.setText(  nota.getServico()  );
-        item.tvValor.setText(  nota.getValor()  );
+        Servico servico = lista.get( position );
+        item.tvListaCodigo.setText(  servico.getId());
+        item.tvListaServico.setText(  servico.getServico() );
+        item.tvListaValor.setText(  servico.getValor()  );
 
 
 
@@ -67,11 +67,10 @@ public class AdapterServico extends BaseAdapter {
     }
 
     private class Suporte{
-        TextView tvCodigo, tvServico, tvValor;
+        TextView tvListaCodigo, tvListaServico, tvListaValor;
     }
 
 }
-
 
 
 
