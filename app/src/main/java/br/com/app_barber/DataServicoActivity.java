@@ -27,12 +27,15 @@ public class DataServicoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_servico);
 
+
+
         etServico = (EditText) findViewById(R.id.etServico);
         tvDataServico = (TextView) findViewById(R.id.tvDataServico);
         etHorario = (EditText) findViewById(R.id.etHorario);
 
         dataservico = getIntent().getExtras().getLong("datahoraselecao");
 
+        tvDataServico.setText( String.valueOf(dataservico));
         btnSalvarDataServico = (Button)findViewById(R.id.btnSalvarDataServico);
 
         btnSalvarDataServico.setOnClickListener(new View.OnClickListener() {
