@@ -102,11 +102,17 @@ public class LoginActivity extends AppCompatActivity {
                 LoginActivity.this, CadastroServico.class);
         startActivity(intentCadastroServico);
     }
-
-    private void EntrarMenuAdmin(){
-        Intent intentMenuAdmin = new Intent(
-                LoginActivity.this, MenuAdminActivity.class);
-        startActivity(intentMenuAdmin);
+  
+    private void EntrarListaDeServicos(){
+        Intent intentListaActivity = new Intent(
+                LoginActivity.this, ListaActivity.class);
+        startActivity(intentListaActivity);
+    }
+  
+    private void EntrarCalendario(){
+        Intent intentCalendario = new Intent(
+                LoginActivity.this, CalendarioActivity.class);
+        startActivity(intentCalendario);
     }
 }
 
