@@ -3,6 +3,7 @@ package br.com.app_barber;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.SyncStateContract;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
@@ -103,7 +104,6 @@ public class ListaActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         lvLista = (ListView)findViewById(R.id.lvService);
-
         lista = new ArrayList<>();
 
         carregarLista();
@@ -118,7 +118,7 @@ public class ListaActivity extends AppCompatActivity {
             }
         });
 
-        lvLista.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+        lvListaServicos.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
 
@@ -151,7 +151,7 @@ public class ListaActivity extends AppCompatActivity {
 
     private void carregarLista(){
         adapter = new AdapterServico(this, lista);
-        lvLista.setAdapter(adapter);
+        lvListaServicos.setAdapter(adapter);
     }
 
     @Override

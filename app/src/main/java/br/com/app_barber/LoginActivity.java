@@ -30,7 +30,9 @@ public class LoginActivity extends AppCompatActivity {
 
         autenticacao = FirebaseAuth.getInstance();
 
+
         authStateListener = new FirebaseAuth.AuthStateListener() {
+
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
@@ -41,6 +43,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
 
             }
+
         };
 
         etEmail = (EditText) findViewById(R.id.etLogin);
@@ -85,7 +88,9 @@ public class LoginActivity extends AppCompatActivity {
                                         Toast.makeText(LoginActivity.this,
                                                 "Login ok!",
                                                 Toast.LENGTH_LONG).show();
-                                        EntrarCadastroServico();
+                                        //EntrarCadastroServico();
+                                        EntrarMenuAdmin();
+
                                     }
                                 }
                             });
@@ -97,11 +102,13 @@ public class LoginActivity extends AppCompatActivity {
                 LoginActivity.this, CadastroServico.class);
         startActivity(intentCadastroServico);
     }
+  
     private void EntrarListaDeServicos(){
         Intent intentListaActivity = new Intent(
                 LoginActivity.this, ListaActivity.class);
         startActivity(intentListaActivity);
     }
+  
     private void EntrarCalendario(){
         Intent intentCalendario = new Intent(
                 LoginActivity.this, CalendarioActivity.class);

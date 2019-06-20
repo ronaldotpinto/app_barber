@@ -34,7 +34,7 @@
 
         <CalendarView
 
-            android:id="@+id/CalendarView"
+            android:id="@+id/cvDataServico"
             android:layout_width="match_parent"
             android:layout_height="320dp">
 
@@ -44,12 +44,11 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/btnSalvarData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:text="Salvar"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -57,6 +56,6 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.563" />
+        app:layout_constraintVertical_bias="0.298" />
 
 </android.support.constraint.ConstraintLayout>
