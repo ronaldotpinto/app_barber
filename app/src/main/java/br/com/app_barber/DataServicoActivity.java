@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.util.Date;
+import java.text.SimpleDateFormat;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -22,6 +23,7 @@ public class DataServicoActivity extends AppCompatActivity {
     private DatabaseReference reference;
 
     long dataservico;
+    String data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,11 +36,18 @@ public class DataServicoActivity extends AppCompatActivity {
         tvDataServico = (TextView) findViewById(R.id.tvDataServico);
         etHorario = (EditText) findViewById(R.id.etHorario);
 
-        dataservico = getIntent().getExtras().getLong("datahoraselecao");
-        Date date = new Date(dataservico);
+        //dataservico = getIntent().getExtras().getLong("datahoraselecao");
 
-        tvDataServico.setText( date.toString());
-        
+        data = getIntent().getExtras().getString("datahoraselecao");
+
+        /*Date date = new Date(dataservico);
+
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        String dateselecao = sdf.format(date.getTime());
+        */
+
+        tvDataServico.setText(data);
+
         btnSalvarDataServico = (Button)findViewById(R.id.btnSalvarDataServico);
 
         btnSalvarDataServico.setOnClickListener(new View.OnClickListener() {
