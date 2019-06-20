@@ -18,6 +18,7 @@ public class CadastroServico extends AppCompatActivity {
 
     private FirebaseDatabase database;
     private DatabaseReference reference;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
