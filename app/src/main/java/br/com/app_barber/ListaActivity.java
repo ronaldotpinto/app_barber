@@ -29,7 +29,7 @@ import java.util.List;
 
 public class ListaActivity extends AppCompatActivity {
 
-    ListView lvLista;
+    ListView lvLista; //= (ListView) findViewById(R.id.lvService);
     List<Servico> lista;
 
     AdapterServico adapter;
@@ -48,7 +48,7 @@ public class ListaActivity extends AppCompatActivity {
 
         database = FirebaseDatabase.getInstance();
         reference = database.getReference();
-        query = reference.child("Servicos").orderByChild("servico");
+        query = reference.child("Servicos").orderByChild("valor");
 
         childEventListener = new ChildEventListener() {
             @Override
@@ -102,7 +102,7 @@ public class ListaActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        lvLista = (ListView) findViewById(R.id.lvServico);
+        lvLista = (ListView)findViewById(R.id.lvService);
 
         lista = new ArrayList<>();
 
@@ -113,7 +113,7 @@ public class ListaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(
-                        ListaActivity.this, CadastroActivity.class);
+                        ListaActivity.this, CadastroServico.class);
                 startActivity(intent);
             }
         });
