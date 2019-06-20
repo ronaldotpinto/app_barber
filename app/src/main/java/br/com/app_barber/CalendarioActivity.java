@@ -14,6 +14,7 @@ public class CalendarioActivity extends AppCompatActivity {
 
     private Button btnSalvarData;
     private CalendarView cvDataServico;
+    long dataservico;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +22,7 @@ public class CalendarioActivity extends AppCompatActivity {
         setContentView(R.layout.activity_calendario);
 
         cvDataServico = (CalendarView) findViewById(R.id.cvDataServico); // get the reference of CalendarView
-        long dataservico = cvDataServico.getDate(); // get selected date in milliseconds
+        dataservico = cvDataServico.getDate(); // get selected date in milliseconds
 
 
         btnSalvarData = (Button) findViewById(R.id.btnSalvarData);
@@ -37,6 +38,7 @@ public class CalendarioActivity extends AppCompatActivity {
     private void SalvarDataServico(){
         Intent intentCadastroServico = new Intent(
                 CalendarioActivity.this, DataServicoActivity.class);
+        intentCadastroServico.putExtra("datahoraselecao", dataservico);
         startActivity(intentCadastroServico);
 
     }

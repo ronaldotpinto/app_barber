@@ -20,6 +20,8 @@ public class DataServicoActivity extends AppCompatActivity {
     private FirebaseDatabase database;
     private DatabaseReference reference;
 
+    long dataservico;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +30,8 @@ public class DataServicoActivity extends AppCompatActivity {
         etServico = (EditText) findViewById(R.id.etServico);
         tvDataServico = (TextView) findViewById(R.id.tvDataServico);
         etHorario = (EditText) findViewById(R.id.etHorario);
+
+        dataservico = getIntent().getExtras().getLong("datahoraselecao");
 
         btnSalvarDataServico = (Button)findViewById(R.id.btnSalvarDataServico);
 
@@ -43,7 +47,7 @@ public class DataServicoActivity extends AppCompatActivity {
     private void salvarDataServico(){
         DataServico dataservico = new DataServico();
         dataservico.setServico(etServico.getText().toString());
-        dataservico.setData( tvDataServico.getText().toString());
+        dataservico.setData( dataservico.toString());
         dataservico.setHorario( etHorario.getText().toString());
 
         database = FirebaseDatabase.getInstance();
