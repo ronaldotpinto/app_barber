@@ -3,6 +3,7 @@ package br.com.app_barber;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.SyncStateContract;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
@@ -29,7 +30,7 @@ import java.util.List;
 
 public class ListaActivity extends AppCompatActivity {
 
-    ListView lvLista;
+    ListView lvListaServicos;
     List<Servico> lista;
 
     AdapterServico adapter;
@@ -102,7 +103,7 @@ public class ListaActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        lvLista = (ListView) findViewById(R.id.lvServico);
+        lvListaServicos = (ListView) findViewById(R.id.lvServico);
 
         lista = new ArrayList<>();
 
@@ -113,12 +114,12 @@ public class ListaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(
-                        ListaActivity.this, CadastroActivity.class);
+                        ListaActivity.this, CadastroServico.class);
                 startActivity(intent);
             }
         });
 
-        lvLista.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+        lvListaServicos.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
 
@@ -151,7 +152,7 @@ public class ListaActivity extends AppCompatActivity {
 
     private void carregarLista(){
         adapter = new AdapterServico(this, lista);
-        lvLista.setAdapter(adapter);
+        lvListaServicos.setAdapter(adapter);
     }
 
     @Override
