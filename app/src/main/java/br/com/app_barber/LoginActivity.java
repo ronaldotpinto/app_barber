@@ -30,7 +30,9 @@ public class LoginActivity extends AppCompatActivity {
 
         autenticacao = FirebaseAuth.getInstance();
 
+
         authStateListener = new FirebaseAuth.AuthStateListener() {
+
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
@@ -41,6 +43,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
 
             }
+
         };
 
         etEmail = (EditText) findViewById(R.id.etLogin);
