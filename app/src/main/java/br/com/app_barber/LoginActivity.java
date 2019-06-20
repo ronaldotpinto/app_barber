@@ -85,7 +85,9 @@ public class LoginActivity extends AppCompatActivity {
                                         Toast.makeText(LoginActivity.this,
                                                 "Login ok!",
                                                 Toast.LENGTH_LONG).show();
-                                        EntrarCadastroServico();
+                                        //EntrarCadastroServico();
+                                        EntrarMenuAdmin();
+
                                     }
                                 }
                             });
@@ -96,6 +98,12 @@ public class LoginActivity extends AppCompatActivity {
         Intent intentCadastroServico = new Intent(
                 LoginActivity.this, CadastroServico.class);
         startActivity(intentCadastroServico);
+    }
+
+    private void EntrarMenuAdmin(){
+        Intent intentMenuAdmin = new Intent(
+                LoginActivity.this, MenuAdminActivity.class);
+        startActivity(intentMenuAdmin);
     }
 }
 
