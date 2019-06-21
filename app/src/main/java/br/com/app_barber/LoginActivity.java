@@ -88,7 +88,7 @@ public class LoginActivity extends AppCompatActivity {
                                     {
                                         if(emailCompar.equals("admin@teste.com"))
                                         {
-                                            EntrarListaDeServicos();
+                                            EntrarMenuAdmin();
                                         }
                                         else
                                         {
@@ -110,16 +110,10 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(intentCalendario);
     }
   
-    private void EntrarListaDeServicos(){
-        Intent intentListaActivity = new Intent(
-                LoginActivity.this, ListaActivity.class);
-        startActivity(intentListaActivity);
-    }
-  
-    private void EntrarCalendario(){
-        Intent intentCalendario = new Intent(
-                LoginActivity.this, CalendarioActivity.class);
-        startActivity(intentCalendario);
+    private void EntrarMenuAdmin(){
+        Intent intentMenuAdmin = new Intent(
+                LoginActivity.this, MenuAdminActivity.class);
+        startActivity(intentMenuAdmin);
     }
 }
 
