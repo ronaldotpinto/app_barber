@@ -46,8 +46,8 @@ public class AdapterServico extends BaseAdapter {
             convertView = inflater.inflate
                     (R.layout.layout_lista_servicos, null);
             item = new Suporte();
-            item.tvId = (TextView)
-                    convertView.findViewById(R.id.tvListaId);
+          //  item.tvId = (TextView)
+                //    convertView.findViewById(R.id.tvListaId);
             item.tvServico = (TextView)
                     convertView.findViewById(R.id.tvListaServico);
             item.tvValor = (TextView)
@@ -63,7 +63,7 @@ public class AdapterServico extends BaseAdapter {
         }
 
         Servico servico = lista.get( position );
-        item.tvId.setText(  servico.getId());
+      //  item.tvId.setText(  servico.getId());
         item.tvServico.setText(  servico.getServico() );
         item.tvValor.setText(  servico.getValor()  );
 
