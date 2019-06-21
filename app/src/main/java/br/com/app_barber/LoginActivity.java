@@ -22,7 +22,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private FirebaseAuth autenticacao;
     private FirebaseAuth.AuthStateListener authStateListener;
-
+    String email;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,8 +70,9 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void entrar(){
-        String email = etEmail.getText().toString();
+        email = etEmail.getText().toString();
         String senha = etSenha.getText().toString();
+
         if( !email.isEmpty() ){
             autenticacao.signInWithEmailAndPassword(email,senha)
                     .addOnCompleteListener(this,
@@ -85,22 +86,30 @@ public class LoginActivity extends AppCompatActivity {
                                     }
                                     else
                                     {
+
+
+                                        if(etEmail.getText().toString() == "admin@teste.com")
+                                        {
+                                            EntrarMenuAdmin();
+                                        }
+                                        else
+                                        {
+                                            EntrarCalendarioActivity();
+                                        }
+
                                         Toast.makeText(LoginActivity.this,
                                                 "Login ok!",
                                                 Toast.LENGTH_LONG).show();
-                                        //EntrarCadastroServico();
-                                        EntrarMenuAdmin();
-
                                     }
                                 }
                             });
         }
     }
 
-    private void EntrarCadastroServico(){
-        Intent intentCadastroServico = new Intent(
-                LoginActivity.this, CadastroServico.class);
-        startActivity(intentCadastroServico);
+    private void EntrarCalendarioActivity(){
+        Intent intentCalendario = new Intent(
+                LoginActivity.this, CalendarioActivity.class);
+        startActivity(intentCalendario);
     }
   
     private void EntrarListaDeServicos(){
