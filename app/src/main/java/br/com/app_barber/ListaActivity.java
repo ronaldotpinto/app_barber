@@ -30,7 +30,7 @@ import java.util.List;
 
 public class ListaActivity extends AppCompatActivity {
 
-    ListView lvListaServicos;
+    ListView lvLista; //= (ListView) findViewById(R.id.lvService);
     List<Servico> lista;
 
     AdapterServico adapter;
@@ -49,7 +49,7 @@ public class ListaActivity extends AppCompatActivity {
 
         database = FirebaseDatabase.getInstance();
         reference = database.getReference();
-        query = reference.child("Servicos").orderByChild("servico");
+        query = reference.child("Servicos").orderByChild("valor");
 
         childEventListener = new ChildEventListener() {
             @Override
@@ -103,8 +103,7 @@ public class ListaActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        lvListaServicos = (ListView) findViewById(R.id.lvServico);
-
+        lvLista = (ListView)findViewById(R.id.lvService);
         lista = new ArrayList<>();
 
         carregarLista();
@@ -119,7 +118,7 @@ public class ListaActivity extends AppCompatActivity {
             }
         });
 
-        lvListaServicos.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+        lvLista.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
 
@@ -152,7 +151,7 @@ public class ListaActivity extends AppCompatActivity {
 
     private void carregarLista(){
         adapter = new AdapterServico(this, lista);
-        lvListaServicos.setAdapter(adapter);
+        lvLista.setAdapter(adapter);
     }
 
     @Override

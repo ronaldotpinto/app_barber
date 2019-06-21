@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/darker_gray"
     tools:context=".CadastroServico">
 
     <TextView
@@ -14,8 +15,9 @@
         android:layout_marginTop="36dp"
         android:layout_marginEnd="8dp"
         android:text="Servico:"
+        app:layout_constraintBottom_toTopOf="@+id/etServico"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.076"
+        app:layout_constraintHorizontal_bias="0.098"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -27,8 +29,9 @@
         android:layout_marginTop="36dp"
         android:layout_marginEnd="8dp"
         android:text="Valor:"
+        app:layout_constraintBottom_toTopOf="@+id/etValor"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.082"
+        app:layout_constraintHorizontal_bias="0.094"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etServico" />
 
@@ -41,8 +44,11 @@
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:hint="Digite o serviço"
+        style="@android:style/Widget.Material.EditText"
         android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -56,8 +62,11 @@
         android:ems="10"
         android:gravity="top"
         android:hint="Digite o valor"
+        style="@android:style/Widget.Material.EditText"
         android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/btnSalvarServico"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -69,7 +78,10 @@
         android:layout_marginTop="64dp"
         android:layout_marginEnd="8dp"
         android:text="Salvar"
+        style="@android:style/Widget.Material.Button.Borderless"
+        app:layout_constraintBottom_toTopOf="@+id/btnVisualizarLista"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etValor" />
 
@@ -80,8 +92,12 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="64dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:text="Visualizar Lista"
+        style="@android:style/Widget.Material.Button.Borderless"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnSalvarServico" />
 </android.support.constraint.ConstraintLayout>
