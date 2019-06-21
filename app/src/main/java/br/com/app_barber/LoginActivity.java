@@ -22,7 +22,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private FirebaseAuth autenticacao;
     private FirebaseAuth.AuthStateListener authStateListener;
-    String email;
+    String emailCompar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,9 +70,9 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void entrar(){
-        email = etEmail.getText().toString();
+        String email = etEmail.getText().toString();
         String senha = etSenha.getText().toString();
-
+        emailCompar = new String(etEmail.getText().toString());
         if( !email.isEmpty() ){
             autenticacao.signInWithEmailAndPassword(email,senha)
                     .addOnCompleteListener(this,
@@ -86,9 +86,7 @@ public class LoginActivity extends AppCompatActivity {
                                     }
                                     else
                                     {
-
-
-                                        if(etEmail.getText().toString() == "admin@teste.com")
+                                        if(emailCompar.equals("admin@teste.com"))
                                         {
                                             EntrarMenuAdmin();
                                         }
@@ -98,7 +96,7 @@ public class LoginActivity extends AppCompatActivity {
                                         }
 
                                         Toast.makeText(LoginActivity.this,
-                                                "Login ok!",
+                                                "Login efetuado",
                                                 Toast.LENGTH_LONG).show();
                                     }
                                 }
