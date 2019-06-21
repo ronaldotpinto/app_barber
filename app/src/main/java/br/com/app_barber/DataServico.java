@@ -3,13 +3,16 @@ package br.com.app_barber;
 public class DataServico {
 
     private String id;
-    private String data, horario,  servico, valor;
+    private String nome;
+    private String data;
+    private String horario;
+    private String servico;
 
 
 
     @Override
     public String toString() {
-        return this.data + "\n" + this.horario + "\n" + this.servico + "\n" + this.valor;
+        return this.nome + "\n" + this.servico +"\n"+ this.data + "\n" + this.horario;
     }
 
     public String getId() {
@@ -20,11 +23,15 @@ public class DataServico {
         this.id = id;
     }
 
-    public  String getData(String data) {return data;}
+    public  String getNome() {return nome;}
+
+    public void setNome(String nome){this.nome = nome;}
+
+    public  String getData() {return data;}
 
     public void setData(String data){this.data = data;}
 
-    public  String getHorario(String horario) {return horario;}
+    public  String getHorario() {return horario;}
 
     public void setHorario(String horario){this.horario = horario;}
 
@@ -34,11 +41,5 @@ public class DataServico {
 
     public void setServico(String servico) {this.servico = servico; }
 
-    public String getValor() {
-        return valor;
-    }
 
-    public void setValor(String valor) {
-        this.valor = valor;
-    }
 }
