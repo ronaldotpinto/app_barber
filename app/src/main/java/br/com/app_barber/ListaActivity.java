@@ -118,7 +118,7 @@ public class ListaActivity extends AppCompatActivity {
             }
         });
 
-        lvListaServicos.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+        lvLista.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
 
@@ -151,7 +151,7 @@ public class ListaActivity extends AppCompatActivity {
 
     private void carregarLista(){
         adapter = new AdapterServico(this, lista);
-        lvListaServicos.setAdapter(adapter);
+        lvLista.setAdapter(adapter);
     }
 
     @Override

@@ -88,7 +88,7 @@ public class LoginActivity extends AppCompatActivity {
                                     {
                                         if(emailCompar.equals("admin@teste.com"))
                                         {
-                                            EntrarMenuAdmin();
+                                            EntrarListaDeServicos();
                                         }
                                         else
                                         {
