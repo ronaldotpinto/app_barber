@@ -15,7 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class DataServicoActivity extends AppCompatActivity {
 
-    private EditText etServico, etHorario;
+    private EditText etNome, etServico, etHorario;
     private TextView tvDataServico;
     private Button btnSalvarDataServico;
 
@@ -31,7 +31,7 @@ public class DataServicoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_data_servico);
 
 
-
+        etNome = (EditText)  findViewById(R.id.etNome);
         etServico = (EditText) findViewById(R.id.etServico);
         tvDataServico = (TextView) findViewById(R.id.tvDataServico);
         etHorario = (EditText) findViewById(R.id.etHorario);
@@ -60,14 +60,17 @@ public class DataServicoActivity extends AppCompatActivity {
     }
 
     private void salvarDataServico(){
+        String sData = new String(data);
         DataServico dataservico = new DataServico();
+        dataservico.setNome(etNome.getText().toString());
         dataservico.setServico(etServico.getText().toString());
-        dataservico.setData( dataservico.toString());
+        dataservico.setData( sData);
         dataservico.setHorario( etHorario.getText().toString());
+
 
         database = FirebaseDatabase.getInstance();
         reference = database.getReference();
-        reference.child("DataServico").push().setValue( dataservico );
+        reference.child("DataServico").push().setValue(dataservico);
 
         Toast.makeText(DataServicoActivity.this,
                 "Serviço agendado!",
