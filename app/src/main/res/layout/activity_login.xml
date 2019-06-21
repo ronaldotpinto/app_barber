@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/darker_gray"
     tools:context=".LoginActivity">
 
     <EditText
@@ -15,9 +16,11 @@
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:hint="Digite seu usuário:"
+        style="@android:style/Widget.Material.EditText"
         android:inputType="textWebEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/etSenha"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -30,9 +33,11 @@
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:hint="Digite sua senha"
+        style="@android:style/Widget.Material.EditText"
         android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/btnEntrar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etLogin" />
 
@@ -44,7 +49,10 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:text="Entrar"
+        style="@android:style/Widget.Material.Button.Borderless"
+        app:layout_constraintBottom_toTopOf="@+id/btnCadastro"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etSenha" />
 
@@ -55,8 +63,12 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="48dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:text="Cadastre-se"
+        style="@android:style/Widget.Material.Button.Borderless"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnEntrar" />
 </android.support.constraint.ConstraintLayout>
